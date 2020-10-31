@@ -4,6 +4,9 @@ Builtwith:
 - Angular v7
 - [Covid-19 API](https://covid19-api.org/)
 
+### Roadmap
+- [ ] Table with filtering
+- [ ] ...
 
 ### Getting Started
 To run this locally, clone the repo and use NPM to install the dependencies. (You’ll also need Node.js installed)

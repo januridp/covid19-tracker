@@ -1,0 +1,41 @@
+<mat-toolbar color="primary">
+  <span>{{title}}</span>
+
+  <!-- This fills the remaining space of the current row -->
+  <span class="fill-remaining-space"></span>
+
+  <span>
+    <a style="color: white;" href="https://github.com/januridp/covid19-tracker">GitHub</a>
+  </span>
+</mat-toolbar>
+
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="content-head">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <p>
+    The COVID-19 statistics collected from a <a href="https://covid19-api.org/">Free COVID-19 API</a>.
+  </p>
+  <h2>Here are the statuses of Covid-19 : <button (click)="refresh()" mat-raised-button color="primary"><mat-icon aria-hidden="false" aria-label="Example home icon">refresh</mat-icon>refresh</button></h2>
+
+  <table mat-table class="mat-elevation-z8">
+    <thead>
+      <th mat-header-cell>Country</th>
+      <th mat-header-cell>Cases</th>
+      <th mat-header-cell>Deaths</th>
+      <th mat-header-cell>Recovered</th>
+      <th mat-header-cell>Last Update</th>
+    </thead>
+    <tbody *ngFor="let status of statuses">
+      <tr>
+        <td mat-cell>{{ status.country }} <img src="https://www.countryflags.io/{{status.country}}/flat/16.png"></td>
+        <td mat-cell>{{ status.cases | number }}</td>
+        <td mat-cell>{{ status.deaths | number }}</td>
+        <td mat-cell>{{ status.recovered | number }}</td>
+        <td mat-cell>{{ status.last_update | date:'full' }}  </td>
+      </tr>
+    </tbody>
+  </table>
+    
+</div>
